@@ -1,0 +1,1 @@
+onmessage=e=>{e=e.data;"meme"===e&&console.log(Date.now());let a={url:e};fetch(e,{mode:"cors"}).then(e=>e.blob()).then(e=>createImageBitmap(e)).then(e=>{a.image=e}).catch(()=>{a.errored=!0}).finally(()=>{self.postMessage(a)})};
